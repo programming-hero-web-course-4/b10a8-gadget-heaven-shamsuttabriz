@@ -1,0 +1,204 @@
+[
+  {
+    "product_id": 1,
+    "product_title": "Gaming Laptop Pro 2024",
+    "product_image": "https://i.ibb.co.com/G0C248X/laptop-1.jpg",
+    "category": "laptop",
+    "price": 1499.99,
+    "description": "High-performance gaming laptop for immersive gaming experiences.",
+    "specifications": [
+      "Intel Core i9 processor",
+      "32GB RAM",
+      "1TB SSD",
+      "NVIDIA RTX 4080 GPU",
+      "17-inch QHD display"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 2,
+    "product_title": "Business Ultrabook 14",
+    "product_image": "https://i.ibb.co.com/2KyQ1SJ/laptop-2.jpg",
+    "category": "laptop",
+    "price": 1099.99,
+    "description": "Lightweight ultrabook for professionals with excellent battery life.",
+    "specifications": [
+      "Intel Core i7 processor",
+      "16GB RAM",
+      "512GB SSD",
+      "14-inch FHD touchscreen",
+      "Fingerprint scanner"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": 3,
+    "product_title": "Smartphone X Pro",
+    "product_image": "https://i.ibb.co.com/m92nrMy/phone-1.jpg",
+    "category": "phone",
+    "price": 799.99,
+    "description": "Sleek smartphone with an impressive camera and smooth performance.",
+    "specifications": [
+      "6.7-inch AMOLED display",
+      "Triple 50MP rear cameras",
+      "5000mAh battery",
+      "Snapdragon 8 Gen 2",
+      "120Hz refresh rate"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 4,
+    "product_title": "Budget Smartphone Z10",
+    "product_image": "https://i.ibb.co.com/3SmL5yb/phone-2.jpg",
+    "category": "phone",
+    "price": 249.99,
+    "description": "Affordable smartphone with all essential features.",
+    "specifications": [
+      "6.5-inch HD+ display",
+      "Dual 16MP cameras",
+      "4000mAh battery",
+      "4GB RAM",
+      "64GB storage"
+    ],
+    "availability": true,
+    "rating": 4.3
+  },
+  {
+    "product_id": 5,
+    "product_title": "Wireless Earbuds Pro",
+    "product_image": "https://i.ibb.co.com/tYBMx5D/accessories-1.jpg",
+    "category": "accessories",
+    "price": 129.99,
+    "description": "High-quality earbuds with noise cancellation and long battery life.",
+    "specifications": [
+      "Bluetooth 5.2",
+      "Active Noise Cancellation",
+      "24-hour battery life",
+      "Water-resistant"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 6,
+    "product_title": "Portable Power Bank 20k",
+    "product_image": "https://i.ibb.co.com/GCYrcxm/accessories-2.jpg",
+    "category": "accessories",
+    "price": 49.99,
+    "description": "Compact power bank with fast charging capabilities.",
+    "specifications": [
+      "20000mAh capacity",
+      "USB-C and USB-A ports",
+      "Fast charging support",
+      "LED battery indicator"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": 7,
+    "product_title": "Smart Watch Active",
+    "product_image": "https://i.ibb.co.com/4jMyRqP/smartwatch-1.jpg",
+    "category": "smart-watch",
+    "price": 179.99,
+    "description": "Advanced smartwatch with fitness tracking and health monitoring.",
+    "specifications": [
+      "Heart rate monitor",
+      "GPS tracking",
+      "Sleep analysis",
+      "Waterproof",
+      "7-day battery life"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": 8,
+    "product_title": "Premium Smart Watch X",
+    "product_image": "https://i.ibb.co.com/yBNJmbR/smartwatch-2.jpg",
+    "category": "smart-watch",
+    "price": 299.99,
+    "description": "Luxury smartwatch with premium features and design.",
+    "specifications": [
+      "AMOLED display",
+      "ECG monitoring",
+      "Built-in voice assistant",
+      "Bluetooth calling",
+      "5-day battery life"
+    ],
+    "availability": false,
+    "rating": 4.9
+  },
+  {
+    "product_id": 9,
+    "product_title": "MacBook Air M2",
+    "product_image": "https://i.ibb.co.com/3ryB3ZZ/macbook-1.jpg",
+    "category": "mac-book",
+    "price": 1199.99,
+    "description": "Thin and lightweight MacBook with the latest M2 chip.",
+    "specifications": [
+      "Apple M2 chip",
+      "13.3-inch Retina display",
+      "256GB SSD",
+      "16GB RAM",
+      "Up to 18 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": 10,
+    "product_title": "MacBook Pro 16 M2 Max",
+    "product_image": "https://i.ibb.co.com/GxryB2p/macbook-2.jpg",
+    "category": "mac-book",
+    "price": 3499.99,
+    "description": "High-end MacBook for professionals with unmatched performance.",
+    "specifications": [
+      "Apple M2 Max chip",
+      "16-inch Liquid Retina XDR display",
+      "1TB SSD",
+      "32GB RAM",
+      "Up to 21 hours of battery life"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": 11,
+    "product_title": "iPhone 15 Pro Max",
+    "product_image": "https://i.ibb.co.com/nksxTVj/iphone-1.jpg",
+    "category": "iphone",
+    "price": 1299.99,
+    "description": "Latest iPhone with an exceptional camera and titanium design.",
+    "specifications": [
+      "6.7-inch Super Retina XDR display",
+      "A17 Pro chip",
+      "48MP triple-camera system",
+      "USB-C charging",
+      "Dynamic Island"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": 12,
+    "product_title": "iPhone 15 Mini",
+    "product_image": "https://i.ibb.co.com/HzdqdbY/iphone-2.jpg",
+    "category": "iphone",
+    "price": 899.99,
+    "description": "Compact iPhone with powerful performance and great features.",
+    "specifications": [
+      "5.4-inch Super Retina XDR display",
+      "A17 Pro chip",
+      "Dual 48MP cameras",
+      "USB-C charging",
+      "Water-resistant"
+    ],
+    "availability": false,
+    "rating": 4.5
+  }
+]

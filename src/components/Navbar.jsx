@@ -24,8 +24,8 @@ export default function Navbar({ pathname }) {
   );
 
   return (
-    <div
-      className={`navbar fixed md:px-20 ${
+    <nav
+      className={`navbar fixed md:px-20 z-50 ${
         pathname == "/" ? "mt-10 text-white px-8 md:px-20 " : "bg-white"
       }`}
     >
@@ -81,6 +81,6 @@ export default function Navbar({ pathname }) {
           <FaRegHeart />
         </a>
       </div>
-    </div>
+    </nav>
   );
 }
