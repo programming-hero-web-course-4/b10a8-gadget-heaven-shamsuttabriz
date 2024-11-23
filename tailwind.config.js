@@ -13,6 +13,9 @@ export default {
         'secondary': '#09080F99'
       },
     },
+    fontFamily: {
+      sora: ['"Sora", serif'],
+    },
   },
   daisyui: {
     themes: ["light", "dark", "cupcake"],

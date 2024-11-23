@@ -54,7 +54,7 @@ export default function Navbar({ pathname }) {
             {links}
           </ul>
         </div>
-        <Link to="/" className="text-xl font-semibold">
+        <Link to="/" className="text-xl font-semibold lg:font-bold">
           GadgetHeavenTech
         </Link>
       </div>

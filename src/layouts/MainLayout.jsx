@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 export default function MainLayout() {
   const { pathname } = useLocation();
   return (
-    <div>
+    <div className="font-sora">
       <div className={`${pathname == "/" || "h-16 bg-slate-300"}`}>
         <Navbar pathname={pathname} />
       </div>

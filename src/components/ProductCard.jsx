@@ -11,11 +11,11 @@ export default function ProductCard({ product }) {
           </figure>
           <div className="card-body items-start text-center">
             <h2 className="card-title">{product_title}</h2>
-            <p>Price: {price}</p>
-            <div className="card-actions">
+            <p className="font-medium">Price: ${price}</p>
+            <div className="mt-6">
               <Link
                 to={`/product/${product_id}`}
-                className="btn-outline duration-200 hover:bg-primary border-2 border-primary px-3 py-1 rounded-md"
+                className="btn-outline duration-200 hover:bg-primary border-2 border-primary hover:border-primary px-3 py-1 rounded-md"
               >
                 View Details
               </Link>

@@ -4,6 +4,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useLoaderData, useParams } from "react-router-dom";
 import Header from "../components/Header";
+import { addShoppingCart } from "../utils";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
@@ -20,17 +21,22 @@ export default function ProductDetails() {
 
   console.log(product);
 
+  const handleChoose = (choose, type) => {
+    setProduct(choose);
+    addShoppingCart(product, type);
+  };
+
   return (
     <div className="relative z-0">
       {/* Header Section */}
-      <div className="pb-32 bg-primary">
+      <div className="pb-56 bg-primary">
         <Header
           title="Product Details"
           subtitle="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
         />
       </div>
       {/* Details All Information */}
-      <div className="border-4 border-primary/20 p-5 w-full lg:w-2/3 mx-auto my-6 rounded-2xl bg-white absolute top-52 left-1/2 -translate-x-2/4">
+      <div className="border-4 border-primary/20 p-5 w-full lg:w-2/3 mx-auto my-6 rounded-2xl bg-white absolute top-44 left-1/2 -translate-x-2/4">
         <div className="flex flex-col lg:flex-row justify-between gap-8">
           <div className="flex-1 lg:h-[450px]">
             <img
@@ -74,7 +80,7 @@ export default function ProductDetails() {
               <div className="flex items-center gap-3">
                 <p>
                   <Rating
-                    style={{ maxWidth: 140 }}
+                    style={{ maxWidth: 135 }}
                     value={rating}
                     onChange={setRating}
                   />
@@ -85,14 +91,24 @@ export default function ProductDetails() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <button className="flex items-center gap-3 duration-200 hover:bg-primary/90 bg-primary px-4 py-2 rounded-3xl font-bold text-white">
+              <button
+                onClick={() => {
+                  handleChoose(product, "cart");
+                }}
+                className="flex items-center gap-3 duration-200 hover:bg-primary/90 bg-primary px-4 py-2 rounded-3xl font-bold text-white"
+              >
                 <span>Add To Cart</span>
                 <span className="text-xl">
                   <MdOutlineShoppingCart />
                 </span>
               </button>
-              <button className="border-2 bg-slate-100 duration-200 hover:bg-slate-200/90 rounded-full">
-                <p className="text-xl p-2">
+              <button
+                onClick={() => {
+                  handleChoose(product, "wishlist");
+                }}
+                className="border border-primary bg-slate-100 duration-200 hover:bg-slate-200/90 rounded-full"
+              >
+                <p className="text-xl p-2 text-primary">
                   <FaRegHeart />
                 </p>
               </button>
