@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -6,6 +7,7 @@ export default function MainLayout() {
   const { pathname } = useLocation();
   return (
     <div className="font-sora">
+      <Toaster />
       <div className={`${pathname == "/" || "h-16 bg-slate-300"}`}>
         <Navbar pathname={pathname} />
       </div>

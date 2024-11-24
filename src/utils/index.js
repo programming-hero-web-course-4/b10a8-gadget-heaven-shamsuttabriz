@@ -1,3 +1,5 @@
+import toast from "react-hot-toast";
+
 // get all products from local storage
 const getAllProducts = (type) => {
     const allCartData = localStorage.getItem('cart');
@@ -32,13 +34,20 @@ const addShoppingCart = (product, type) => {
     if (type == 'cart') {
         carts.push(product);
         localStorage.setItem('cart', JSON.stringify(carts));
+        toast.success('Cart added successfully')
     }
     else if (type == 'wishlist') {
         wishlists.push(product);
         localStorage.setItem('wishlist', JSON.stringify(wishlists));
+        toast.success("Added to wishlist successfully")
     }
 }
 // Remove a product from local storage
+const removeProduct = (id) => {
+    const allProducts = getAllProducts('cart');
+    const remaining = allProducts.filter(product => product.product_id !== id);
+    localStorage.setItem('cart', JSON.stringify(remaining));
+}
 
-export { addShoppingCart, getAllProducts };
+export { addShoppingCart, getAllProducts, removeProduct };
 

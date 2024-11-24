@@ -19,8 +19,6 @@ export default function ProductDetails() {
     setProduct(singleProduct);
   }, [product_id, data]);
 
-  console.log(product);
-
   const handleChoose = (choose, type) => {
     setProduct(choose);
     addShoppingCart(product, type);
