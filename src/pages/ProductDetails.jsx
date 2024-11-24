@@ -1,14 +1,18 @@
 import { Rating } from "@smastrom/react-rating";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useLoaderData, useParams } from "react-router-dom";
 import Header from "../components/Header";
-import { addShoppingCart } from "../utils";
+import { addShoppingCart, getAllProducts } from "../utils";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState({});
   const [rating, setRating] = useState(4);
+  const [btnDisable, setBtnDisable] = useState(false);
+  const [btnWishlist, setBtnWishlist] = useState(false);
+
   const data = useLoaderData();
   const { product_id } = useParams();
 
@@ -17,6 +21,23 @@ export default function ProductDetails() {
       (product) => product.product_id === parseInt(product_id)
     );
     setProduct(singleProduct);
+    // Button disable or not disable checking
+    // Cart
+    const carts = getAllProducts("cart");
+    const isExits = carts.find(
+      (cart) => cart.product_id === singleProduct.product_id
+    );
+    if (isExits) {
+      setBtnDisable(true);
+    }
+    // Wishlist
+    const wishlists = getAllProducts("wishlist");
+    const isExistWishlist = wishlists.find(
+      (wishlist) => wishlist.product_id === singleProduct.product_id
+    );
+    if (isExistWishlist) {
+      setBtnWishlist(true);
+    }
   }, [product_id, data]);
 
   const handleChoose = (choose, type) => {
@@ -26,6 +47,9 @@ export default function ProductDetails() {
 
   return (
     <div className="relative z-0">
+      <Helmet>
+        <title>GadgetHavenTech | {`Product No ${product_id}`}</title>
+      </Helmet>
       {/* Header Section */}
       <div className="pb-56 bg-primary">
         <Header
@@ -90,6 +114,7 @@ export default function ProductDetails() {
             </div>
             <div className="flex items-center gap-4">
               <button
+                disabled={btnDisable}
                 onClick={() => {
                   handleChoose(product, "cart");
                 }}
@@ -101,6 +126,7 @@ export default function ProductDetails() {
                 </span>
               </button>
               <button
+                disabled={btnWishlist}
                 onClick={() => {
                   handleChoose(product, "wishlist");
                 }}

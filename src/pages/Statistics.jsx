@@ -1,8 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import Header from "../components/Header";
 
 export default function Statistics() {
   return (
     <div>
+      <Helmet>
+        <title>GadgetHavenTech | Statistics</title>
+      </Helmet>
       <div className="bg-primary">
         <Header
           title="Statistics"

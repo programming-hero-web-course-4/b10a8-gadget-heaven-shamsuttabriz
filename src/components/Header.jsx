@@ -5,7 +5,7 @@ export default function Header({ title, subtitle }) {
         <h1 className="text-3xl font-bold text-white mb-3 tracking-wide">
           {title}
         </h1>
-        <p className="text-slate-200 font-medium py-3 px-4 tracking-wide">
+        <p className="text-slate-200 font-medium py-3 px-4 tracking-wide leading-7">
           {subtitle}
         </p>
       </div>

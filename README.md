@@ -8,19 +8,29 @@
 - Daisy UI
 - React
 
-### Uses Library
-
-- React Router DOM
-- React Icons
--
-
 ### Uses Hook
 
 - useState()
 - useEffect()
 - useLocation()
--
+- useParams()
 
 ### Features
 
-- Dynamic page load
+- Dynamic page load using **"React Routing"**
+- Dynamic Navbar
+- Showing dynamic category and category wise product selection
+- Product Details page implement
+- Any product could be added two different places **Add To Cart** and **Wishlist**. Any product can be added only one time not could be added multiple time.
+- Local Storage implement
+- I also manage **Total coast , Sort by Price**
+- Every cart and wishlist product could be remove system implement.
+
+### Handling and Managing data
+
+- Local Storage
+  - Get all product from local storage
+  - Set item to local storage
+  - Remove item from local storage
+
+### [Live Link](https://www.google.com)

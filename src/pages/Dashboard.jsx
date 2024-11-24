@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import { FaSortAmountDownAlt } from "react-icons/fa";
+import success from "../assets/success.png";
 import Header from "../components/Header";
 import SingleCart from "../components/SingleCart";
 import { getAllProducts, removeProduct } from "../utils";
@@ -8,14 +10,13 @@ import { getAllProducts, removeProduct } from "../utils";
 export default function Dashboard() {
   const [products, setProducts] = useState([]);
   const [choose, setChoose] = useState("Cart");
-  const [cost, setCost] = useState(0);
 
   useEffect(() => {
     const carts = getAllProducts("cart");
     setProducts(carts);
-    const totalCost = carts.reduce((acc, curr) => acc + curr.price, 0);
-    setCost(totalCost);
   }, []);
+
+  const totalCost = [...products].reduce((acc, curr) => acc + curr.price, 0);
 
   const handleChoose = (type) => {
     if (type == "wishlist") {
@@ -42,8 +43,16 @@ export default function Dashboard() {
     toast.success("Product removed successfully");
   };
 
+  const handleClose = () => {
+    localStorage.removeItem("cart");
+    setProducts([]);
+  };
+
   return (
     <div>
+      <Helmet>
+        <title>GadgetHavenTech | Dashboard</title>
+      </Helmet>
       <div className="bg-primary">
         <div>
           <Header
@@ -75,7 +84,7 @@ export default function Dashboard() {
             {choose == "Cart" ? (
               <div className="flex flex-col lg:flex-row items-end lg:items-center gap-3">
                 <h2 className="text-xl lg:text-2xl font-semibold">
-                  Total cost: ${cost.toFixed(2)}
+                  Total cost: ${totalCost.toFixed(2)}
                 </h2>
                 <button
                   onClick={handleSort}
@@ -86,7 +95,12 @@ export default function Dashboard() {
                     <FaSortAmountDownAlt />
                   </span>
                 </button>
-                <button className="btn btn-primary bg-primary text-white border border-primary hover:border-primary hover:bg-white hover:text-black duration-200">
+                <button
+                  onClick={() => {
+                    document.getElementById("my_modal_5").showModal();
+                  }}
+                  className="btn btn-primary bg-primary text-white border border-primary hover:border-primary hover:bg-white hover:text-black duration-200"
+                >
                   Purchase
                 </button>
               </div>
@@ -107,6 +121,30 @@ export default function Dashboard() {
           ))}
         </div>
       </div>
+      {/* Modal */}
+      {/* Open the modal using document.getElementById('ID').showModal() method */}
+      <dialog
+        id="my_modal_5"
+        className="modal modal-bottom sm:modal-middle text-center"
+      >
+        <div className="modal-box">
+          <div>
+            <img className="w-36 mx-auto" src={success} alt="Successfully" />
+          </div>
+          <h3 className="font-bold text-2xl">Payment Successfully</h3>
+          <p className="py-4 text-secondary font-semibold">
+            Thanks for purchasing.
+          </p>
+          <p className="text-secondary font-semibold">Total: ${totalCost}</p>
+          <div className="modal-action">
+            <form method="dialog" className="w-full">
+              <button onClick={handleClose} className="btn w-full">
+                Close
+              </button>
+            </form>
+          </div>
+        </div>
+      </dialog>
     </div>
   );
 }

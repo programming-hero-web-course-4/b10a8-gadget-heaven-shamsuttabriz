@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Outlet, useLoaderData } from "react-router-dom";
 import banner from "../assets/banner.jpg";
 import Banner from "../components/Banner";
@@ -7,6 +8,9 @@ export default function Home() {
   const categories = useLoaderData();
   return (
     <div>
+      <Helmet>
+        <title>GadgetHavenTech</title>
+      </Helmet>
       {/* Banner Section */}
       <Banner />
       {/* Banner Image Section */}
@@ -24,9 +28,9 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center my-12">
           Explore Cutting-Edge Gadgets
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 lg:gap-12">
           {/* Category */}
-          <div className="col-span-1">
+          <div className="col-span-1 bg-white p-2 rounded-2xl h-1/3">
             <Categories categories={categories} />
           </div>
           {/* Product */}

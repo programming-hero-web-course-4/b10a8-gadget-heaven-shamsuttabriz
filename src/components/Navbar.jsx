@@ -20,6 +20,11 @@ export default function Navbar({ pathname }) {
           Dashboard
         </Link>
       </li>
+      <li>
+        <Link to="/faq" className="text-lg font-medium">
+          FAQ?
+        </Link>
+      </li>
     </>
   );
 
