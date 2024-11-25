@@ -33,4 +33,4 @@
   - Set item to local storage
   - Remove item from local storage
 
-### [Live Link](https://www.google.com)
+### [Live Link](https://st-gadgethaventech.netlify.app/)
